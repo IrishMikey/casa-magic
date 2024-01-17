@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="my-10 flex min-h-screen flex-col gap-12 lg:my-[42px]">
+    <main className="mx-3 my-10 flex min-h-screen flex-col gap-12 lg:my-[42px]">
       {/* Hero section */}
       <section
         id="#home"
@@ -50,7 +50,7 @@ export default function Home() {
         <section className="flex flex-col justify-around gap-4 rounded-2xl bg-[#D1E3F8] px-4 py-2 text-[#1A2B47] lg:flex-row lg:px-[0px] lg:py-[15px] ">
           <article className="flex flex-col gap-1">
             <h4 className="font-semibold lg:text-[22px]">Prime location</h4>
-            <span className="lg:w-[373px] lg:text-lg lg:leading-[165%]">
+            <span className="border-b border-[#a7c0dd] pb-2 lg:w-[373px] lg:text-lg lg:leading-[165%] ">
               Casa Magic&apos;s location in Golf del Sur puts you close to
               everything you need for a delightful stay. The San Blas Commercial
               Center, with its vibrant selection of bars, cafes, restaurants,
@@ -61,7 +61,7 @@ export default function Home() {
             <h4 className="font-semibold lg:text-[22px]">
               Exclusive amenities
             </h4>
-            <span className="lg:w-[373px] lg:text-lg lg:leading-[165%]">
+            <span className="border-b border-[#a7c0dd] pb-2 lg:w-[373px] lg:text-lg lg:leading-[165%]">
               A stunning pool and terrace area dedicated exclusively for your
               use. Bask in the sun, take refreshing dips, or enjoy al fresco
               dining against the backdrop of Tenerife&apos;s enchanting
