@@ -4,7 +4,7 @@ import NavBar from "./navBar";
 import Footer from "./footer";
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["200", "400", "500"],
+  weight: ["200", "400", "500", "600", "700"],
   variable: "--font-poppins",
 });
 
@@ -16,9 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.className} lg:max-w-[1440px] lg:m-auto lg:py-[18px] lg:px-[16px]`}
-      >
+      <body className={`${poppins.className} lg:m-auto `}>
         <NavBar />
         {children}
         <Footer />

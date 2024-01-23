@@ -1,8 +1,8 @@
 export default function NavBar() {
   return (
-    <nav className="mt-[20px] w-full flex justify-between items-center">
-      <div>
-        <span className="lg:text-[22px]">Casa Magic</span>
+    <nav className="my-2 flex w-full px-2 shadow-md lg:mt-5 lg:items-center lg:justify-center">
+      <div className="lg:w-[1440px]">
+        <span className="lg:text-xl">Casa Magic</span>
       </div>
       {/* <div>
         <ul className="lg:px-[20px] py-1 ">
