@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -18,10 +19,10 @@ export default function Home() {
           ></Image>
         </div>
         <div>
-          <p className="text-lg text-center mx-4">Golf del Sur, Tenerife</p>
+          <p className="text-center mx-4 text-gray-500">Golf del Sur, Tenerife</p>
         </div>
       </section>
-      <section className="flex flex-col  mt-[3.375rem]  gap-8">
+      <section id="about" className="flex flex-col  mt-[3.375rem]  gap-8 scroll-m-14">
         <h2 className="font-semibold text-xl mx-4">About The Accommodation </h2>
         <div className="flex flex-col gap-8 ">
           <p className="text-lg max-w-[40ch] mx-4">
@@ -63,8 +64,61 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col  mt-[3.375rem]  gap-8">
-        <h2 className="font-semibold text-xl mx-4">Our Gallery </h2>
+      <section className="flex flex-col gap-4 mt-[3.375rem] lg:my-[2.625rem] lg:gap-12 mx-4">
+        <div className="flex justify-between">
+          <h2 className="text-2xl font-bold">Our Gallery</h2>
+          <span>
+            <Link
+              href="/gallery"
+              className="text-[#006eff] transition-all hover:text-[1.0625rem] hover:underline"
+            >
+              View all
+            </Link>
+          </span>
+        </div>
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col justify-evenly gap-4 lg:flex-row">
+            <div className="h-[175px] w-full  rounded bg-gray-300 lg:h-[356px] lg:rounded-2xl">
+              1
+            </div>
+            <div className="h-[175px] w-full rounded bg-gray-300 lg:h-[356px] lg:basis-[90%] lg:rounded-2xl">
+              2
+            </div>
+          </div>
+          <div className="flex flex-col justify-evenly gap-4 lg:flex-row">
+            <div className="h-[175px] w-full  rounded bg-gray-300 lg:h-[356px] lg:basis-[90%] lg:rounded-2xl">
+              3
+            </div>
+            <div className="h-[175px] w-full  rounded bg-gray-300 lg:h-[356px] lg:rounded-2xl">
+              4
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="flex flex-col gap-4 mt-[3.375rem] lg:my-[2.625rem] lg:gap-12 mx-4">
+              <h2 className="text-2xl font-bold">Property Overview</h2>
+          
+              <div>
+              <div>
+                 <ul>
+                    <li>King-sized bed & en suite bathroom</li>
+                    <li>Lounge with English TV</li>
+                    <li>Wi-Fi</li>
+                    <li>Air conditioning</li>
+                    <li>Street parking</li>
+                    <li>Private Access</li>
+                   <li>Pool clean</li>
+                    <li>Washing machine</li>
+                    <li>Fridge / Freezer</li>
+                    <li>Coffee machine</li>
+                    <li>Air fryer</li>
+                   <li>Hob & Microwave</li>
+                       </ul>
+                         </div>
+                           <div>
+                                                      </div>
+</div>
+  
 
       </section>
     </main>

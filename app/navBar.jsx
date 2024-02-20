@@ -35,7 +35,7 @@ export default function NavBar() {
           style={{
             fontSize: `${titleFontSize}px`,
           }}
-          className="font-allura text-[24px] transition-all ease-in-out lg:text-[42px]"
+          className=" text-[24px] transition-all ease-in-out lg:text-[42px]"
         >
           Casa Magic
         </Link>
@@ -59,7 +59,7 @@ export default function NavBar() {
         }
       >
         <ul className="flex w-full flex-col gap-8 md:flex-row md:gap-2 ">
-          <h4 className="px-8 font-allura text-[2.25rem]">Casa Magic</h4>
+          <h4 className="px-8 text-[2.25rem]">Casa Magic</h4>
           <div>
             <li className="duration-400  flex w-full  text-[1.75rem] font-bold uppercase transition-all ease-in-out ">
               <Link
@@ -73,7 +73,7 @@ export default function NavBar() {
             <li className="duration-400 flex w-full  text-[1.75rem] font-bold uppercase transition-all ease-in-out ">
               <Link
                 onClick={() => setIsOpen(!isOpen)}
-                href="#About"
+                href="/#about"
                 className=" block w-full px-8 py-4"
               >
                 About
@@ -82,7 +82,7 @@ export default function NavBar() {
             <li className="duration-400  flex w-full  text-[1.75rem] font-bold uppercase transition-all ease-in-out ">
               <Link
                 onClick={() => setIsOpen(!isOpen)}
-                href="#contact"
+                href="/#contact"
                 className=" block w-full px-8 py-4"
               >
                 Contact
@@ -91,7 +91,7 @@ export default function NavBar() {
             <li className="duration-400  flex w-full text-[1.75rem] font-bold uppercase transition-all ease-in-out ">
               <Link
                 onClick={() => setIsOpen(!isOpen)}
-                href="#gallery"
+                href="/gallery"
                 className=" block w-full px-8 py-4"
               >
                 Gallery
@@ -109,12 +109,12 @@ export default function NavBar() {
             </Link>
           </li>
           <li className="duration-400  flex h-full w-full items-center p-2 text-[18px] font-medium uppercase transition-all  ease-in-out ">
-            <Link href="#About" className=" ">
+            <Link href="/#about" className=" ">
               About
             </Link>
           </li>
           <li className="duration-400  flex h-full w-full items-center p-2 text-[18px] font-medium uppercase transition-all ease-in-out ">
-            <Link href="#gallery" className=" ">
+            <Link href="/gallery" className=" ">
               Gallery
             </Link>
           </li>
