@@ -28,7 +28,7 @@ export default function NavBar() {
   });
 
   return (
-    <nav className="fixed z-20 flex w-screen flex-col bg-primary p-1 px-4 bg-[#f8e9da] shadow-md shadow-[#dbc5af] md:flex-row md:items-center md:justify-between lg:px-10 rounded-lg ">
+    <nav className="fixed z-20 flex w-screen flex-col bg-primary p-1 px-4 bg-[#f8e9da]  md:flex-row md:items-center md:justify-between lg:px-10 rounded-lg ">
       <div className="flex flex-row items-center justify-between">
         <Link
           href="#"
