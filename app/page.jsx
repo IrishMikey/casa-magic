@@ -95,32 +95,40 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-4 mt-[3.375rem] lg:my-[2.625rem] lg:gap-12 mx-4">
-              <h2 className="text-2xl font-bold">Property Overview</h2>
-          
-              <div>
-              <div>
-                 <ul>
-                    <li>King-sized bed & en suite bathroom</li>
-                    <li>Lounge with English TV</li>
-                    <li>Wi-Fi</li>
-                    <li>Air conditioning</li>
-                    <li>Street parking</li>
-                    <li>Private Access</li>
-                   <li>Pool clean</li>
-                    <li>Washing machine</li>
-                    <li>Fridge / Freezer</li>
-                    <li>Coffee machine</li>
-                    <li>Air fryer</li>
-                   <li>Hob & Microwave</li>
-                       </ul>
-                         </div>
-                           <div>
-                                                      </div>
-</div>
-  
-
-      </section>
+      <section className="flex flex-col gap-4 mt-[3.375rem] lg:my-[2.625rem] lg:gap-12 mx-4">    
+        <h2 className="text-2xl font-bold">Property Overview</h2>          
+        <div className="bg-white rounded-2xl p-4 flex flex-col gap-4">
+          <div className="flex flex-col gap-2 border-b-2 pb-2">
+            <h4 className="text-lg font-medium">Amenities</h4>
+            <ul className="max-w-[30ch] flex flex-col gap-2 text-[0.875rem]">
+              <li>King-sized bed & en suite bathroom</li>
+              <li>Lounge with English TV</li>
+              <li>Wi-Fi</li>
+              <li>Air conditioning</li>
+              <li>Street parking</li>
+              <li>Private Access</li>
+              <li>Pool clean</li>
+              <li>Washing machine</li>
+              <li>Fridge / Freezer</li>
+              <li>Coffee machine</li>
+              <li>Air fryer</li>
+              <li>Hob & Microwave</li>
+            </ul>
+          </div>
+          <div className="flex flex-col gap-2">
+            <h4 className="text-lg font-medium">Rules</h4>
+            <ul className="max-w-[30ch] flex flex-col gap-2 text-[0.875rem]">
+              <li>No pets</li>
+              <li>No parties</li>
+              <li>No smoking indoors</li>
+              <li>No Functions</li>
+              <li>No children</li>
+              <li>Noise restriction applicable to residential area</li>
+              <li>Strictly only the two guests on booking stay overnight</li>
+            </ul>
+          </div>
+        </div>
+       </section>
     </main>
   );
 }
