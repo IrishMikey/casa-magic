@@ -1,9 +1,16 @@
+"use client"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronCircleDown, faChevronCircleUp, faMobilePhone } from "@fortawesome/free-solid-svg-icons";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <main className="flex min-h-screen flex-col mb-[6.25rem] ">
+    <main className="flex min-h-screen flex-col mb-[6.25rem] max-w-[450px] ">
       <section className="flex flex-col justify-around flex-1 gap-8 pt-[3.2rem] min-h-[95vh]">
         <h1 className="text-[2.25rem] leading-[122%]  mx-4 ">
           The best holiday rental in Tenerife for a{" "}
@@ -40,9 +47,9 @@ export default function Home() {
             ></Image>
           </div>
         </div>
-        <div className="flex mt-[2rem] p-4 gap-6 flex-col bg-blue-100 text-blue-950 rounded-2xl shadow ">
+        <div className="flex mt-[2rem] p-4 gap-6 flex-col  justify-evenly bg-blue-100 text-blue-950 rounded-2xl shadow h-[100vh]">
           <div className="flex flex-col xl:flex-row gap-2">
-            <h3 className="text-xl font-medium">Prime Location</h3>
+            <h3 className="text-2xl font-medium">Prime Location</h3>
             <p >
               Casa Magic&apos;s location in Golf del Sur puts you close to
               everything you need for a delightful stay. The San Blas Commercial
@@ -51,7 +58,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col xl:flex-row gap-2">
-            <h3 className="text-xl font-medium">Exlcusive Amenities</h3>
+            <h3 className="text-2xl font-medium">Exlcusive Amenities</h3>
             <p>
               A stunning pool and terrace area dedicated exclusively for your
               use. Bask in the sun, take refreshing dips, or enjoy al fresco
@@ -59,7 +66,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col xl:flex-row gap-2">
-            <h3 className="text-xl font-medium">Unmatched Comfort</h3>
+            <h3 className="text-2xl font-medium">Unmatched Comfort</h3>
             <p>Our accommodation boasts a beautifully furnished 1-bedroom setup, complemented by 2 well-appointed bathrooms. The private lounge is a cozy space for relaxation, while the kitchen area allows you to enjoy your home cooked favourites.</p>
           </div>
         </div>
@@ -95,9 +102,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-4 mt-[3.375rem] lg:my-[2.625rem] lg:gap-12 mx-4">    
+      <section className="flex flex-col gap-4 mt-[3.375rem] lg:my-[2.625rem] lg:gap-12 mx-4 ">    
         <h2 className="text-2xl font-bold">Property Overview</h2>          
-        <div className="bg-white rounded-2xl p-4 flex flex-col gap-4">
+        <div className="bg-white rounded-2xl p-4 flex flex-col gap-4 transition-all">
           <div className="flex flex-col gap-2 border-b-2 pb-2">
             <h4 className="text-lg font-medium">Amenities</h4>
             <ul className="max-w-[30ch] flex flex-col gap-2 text-[0.875rem]">
@@ -116,19 +123,39 @@ export default function Home() {
             </ul>
           </div>
           <div className="flex flex-col gap-2">
-            <h4 className="text-lg font-medium">Rules</h4>
-            <ul className="max-w-[30ch] flex flex-col gap-2 text-[0.875rem]">
-              <li>No pets</li>
-              <li>No parties</li>
-              <li>No smoking indoors</li>
-              <li>No Functions</li>
-              <li>No children</li>
-              <li>Noise restriction applicable to residential area</li>
-              <li>Strictly only the two guests on booking stay overnight</li>
-            </ul>
+         <div className="flex justify-between"  onClick={() => setIsOpen(!isOpen)}>
+         <h4 className="text-lg font-medium cursor-pointer inline-block">Rules</h4>
+          <span className="transition-all">{isOpen ? (
+            <FontAwesomeIcon icon={faChevronCircleUp} className="text-blue-400"/>
+          ) : (
+            <FontAwesomeIcon icon={faChevronCircleDown} className="text-blue-400"/>
+          )}</span>
+         </div>
+      {isOpen && (
+        <ul className="max-w-[30ch] flex flex-col gap-2 text-[0.875rem] ">
+          <li>No pets</li>
+          <li>No parties</li>
+          <li>No smoking indoors</li>
+          <li>No Functions</li>
+          <li>No children</li>
+          <li>Noise restriction applicable to residential area</li>
+          <li>Strictly only the two guests on booking stay overnight</li>
+        </ul>
+      )}
           </div>
         </div>
        </section>
+      {/* Contact Section */}
+      <section className="flex flex-col gap-4 mt-[3.375rem] lg:my-[2.625rem] lg:gap-12 mx-4">  
+      <h2 className="text-2xl font-bold">Get in touch</h2>          
+      <h4 className="">Please feel free to contact us with any enquiries</h4>
+      <div className="flex flex-col gap-2">
+            <ul className="max-w-[30ch] flex flex-col gap-2 text-[0.875rem]">
+              <li className=" bg-white px-2 py-1 rounded-md font-medium text-lg  "><FontAwesomeIcon icon={faMobilePhone} size="2xl"/><a href="tel:+34618100493" className="ml-2">Click to Call</a></li>
+              <li className="bg-[#25d366] px-2 py-1 rounded-md font-medium text-lg text-white"> <FontAwesomeIcon icon={faWhatsapp} size="2xl"/> <a className="ml-2" aria-label="Chat on WhatsApp" alt="Chat on WhatsApp" href="https://wa.me/34618100493?text=Hello,%20I%20was%20checking%20out%20Casa%20Magic%20online%20and%20would%20like%20to%20chat">Chat on WhatsApp</a></li>
+            </ul>
+          </div>
+</section>
     </main>
   );
 }
