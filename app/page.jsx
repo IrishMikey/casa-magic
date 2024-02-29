@@ -10,23 +10,23 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <main className="flex min-h-screen flex-col mb-[6.25rem] max-w-[450px] ">
-      <section className="flex flex-col justify-around flex-1 gap-8 pt-[3.2rem] min-h-[95vh]">
-        <h1 className="text-[2.25rem] leading-[122%]  mx-4 ">
+    <main className="flex min-h-screen flex-col mb-[6.25rem] max-w-[1200px] mx-auto">
+      <section className="flex flex-col justify-around flex-1 gap-8 md:gap-6 lg:justify-evenly pt-[3.2rem] md:pt-[3.8rem] lg:pt-[8rem] min-h-[95vh]">
+        <h1 className="text-[2.25rem] md:text-[2.75rem] leading-[122%]  mx-4 ">
           The best holiday rental in Tenerife for a{" "}
           <span className="italic font-light">magical</span> getaway
         </h1>
-        <div className="flex justify-end ml-4">
+        <div className="flex justify-end ml-4 lg:mx-4 xl:m-0 ">
           <Image
             src="/hero.webp"
             width={1235}
             height={592}
             alt="Image of 'Casa Magic' rental property, its outside area and swimming pool in tenerife"
-            className="min-h-[375px] object-cover rounded-l-[26px] "
+            className="min-h-[375px] object-cover rounded-l-[26px] lg:rounded-r-[32px] "
           ></Image>
         </div>
         <div>
-          <p className="text-center mx-4 text-gray-500">Golf del Sur, Tenerife</p>
+          <p className="text-center mx-4 text-gray-500 md:text-[1.5rem]">Golf del Sur, Tenerife</p>
         </div>
       </section>
       <section id="about" className="flex flex-col  mt-[3.375rem]  gap-8 scroll-m-14">
@@ -57,14 +57,16 @@ export default function Home() {
               and a supermarket, is just a stone&apos;s throw away.
             </p>
           </div>
+            <span className="border-blue-200 h-[2px] border"></span>
           <div className="flex flex-col xl:flex-row gap-2">
-            <h3 className="text-2xl font-medium">Exlcusive Amenities</h3>
+            <h3 className="text-2xl font-medium">Exclusive Amenities</h3>
             <p>
               A stunning pool and terrace area dedicated exclusively for your
               use. Bask in the sun, take refreshing dips, or enjoy al fresco
               dining under the beautiful Tenerife sky.
             </p>
           </div>
+          <span className="border-blue-200 h-[2px] border"></span>
           <div className="flex flex-col xl:flex-row gap-2">
             <h3 className="text-2xl font-medium">Unmatched Comfort</h3>
             <p>Our accommodation boasts a beautifully furnished 1-bedroom setup, complemented by 2 well-appointed bathrooms. The private lounge is a cozy space for relaxation, while the kitchen area allows you to enjoy your home cooked favourites.</p>
@@ -146,11 +148,11 @@ export default function Home() {
         </div>
        </section>
       {/* Contact Section */}
-      <section className="flex flex-col gap-4 mt-[3.375rem] lg:my-[2.625rem] lg:gap-12 mx-4">  
+      <section id="contact" className="flex flex-col gap-4 mt-[3.375rem] lg:my-[2.625rem] lg:gap-12 mx-4">  
       <h2 className="text-2xl font-bold">Get in touch</h2>          
-      <h4 className="">Please feel free to contact us with any enquiries</h4>
-      <div className="flex flex-col gap-2">
-            <ul className="max-w-[30ch] flex flex-col gap-2 text-[0.875rem]">
+      <h4 className="">Get In Touch for availability and cost, or any inquiries</h4>
+      <div className="flex flex-col gap-2 items-center mt-[1rem]">
+            <ul className="max-w-[30ch] flex flex-col gap-6 text-[0.875rem]">
               <li className=" bg-white px-2 py-1 rounded-md font-medium text-lg  "><FontAwesomeIcon icon={faMobilePhone} size="2xl"/><a href="tel:+34618100493" className="ml-2">Click to Call</a></li>
               <li className="bg-[#25d366] px-2 py-1 rounded-md font-medium text-lg text-white"> <FontAwesomeIcon icon={faWhatsapp} size="2xl"/> <a className="ml-2" aria-label="Chat on WhatsApp" alt="Chat on WhatsApp" href="https://wa.me/34618100493?text=Hello,%20I%20was%20checking%20out%20Casa%20Magic%20online%20and%20would%20like%20to%20chat">Chat on WhatsApp</a></li>
             </ul>

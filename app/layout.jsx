@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} lg:max-w-[1440px] flex min-h-screen flex-col`}
+        className={`${poppins.className} lg:max-w-[1200px] flex min-h-screen flex-col mx-auto`}
       >
         <NavBar />
         {children}
