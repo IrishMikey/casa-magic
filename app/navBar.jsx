@@ -28,10 +28,10 @@ export default function NavBar() {
   });
 
   return (
-    <nav className="fixed z-20 flex w-screen flex-col bg-primary p-1 px-4 bg-[#f8e9da]  md:flex-row md:items-center md:justify-between rounded-lg max-w-[1200px]">
+    <nav className="bg-primary fixed z-20 flex w-screen max-w-[1200px] flex-col rounded-lg bg-[#f8e9da]  p-1 px-4 md:flex-row md:items-center md:justify-between">
       <div className="flex flex-row items-center justify-between">
         <Link
-          href="#"
+          href="/"
           style={{
             fontSize: `${titleFontSize}px`,
           }}
@@ -64,7 +64,7 @@ export default function NavBar() {
             <li className="duration-400  flex w-full  text-[1.75rem] font-bold uppercase transition-all ease-in-out ">
               <Link
                 onClick={() => setIsOpen(!isOpen)}
-                href="#"
+                href="/"
                 className=" block w-full px-8 py-4"
               >
                 Home

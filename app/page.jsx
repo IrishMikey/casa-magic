@@ -1,6 +1,12 @@
-"use client"
+"use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleDown, faChevronCircleUp, faMobilePhone, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronCircleDown,
+  faChevronCircleUp,
+  faMobilePhone,
+  faChevronRight,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -10,45 +16,52 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <main className="flex min-h-screen flex-col mb-[6.25rem] max-w-[1200px] mx-auto">
-      <section className="flex flex-col justify-around flex-1 gap-8 md:gap-6 lg:justify-evenly pt-[3.2rem] md:pt-[3.8rem] lg:pt-[8rem] min-h-[95vh]">
-        <h1 className="text-[2.25rem] md:text-[2.75rem] leading-[122%] lg:max-w-[30ch]  mx-4 ">
+    <main className="mx-auto mb-[6.25rem] flex min-h-screen max-w-full flex-col lg:max-w-[1200px]">
+      <section className="flex min-h-[95vh] flex-1 flex-col justify-around gap-8 pt-[3.2rem] md:gap-6 md:pt-[3.8rem] lg:justify-evenly lg:pt-[8rem]">
+        <h1 className="mx-4 text-[2.25rem] leading-[122%] md:text-[2.75rem]  lg:max-w-[30ch] ">
           The best holiday rental in Tenerife for a{" "}
-          <span className="italic font-light">magical</span> getaway
+          <span className="font-light italic">magical</span> getaway
         </h1>
-        <div className="flex justify-end ml-4 lg:mx-4 xl:m-0 xl:mt-4 ">
+        <div className="ml-4 flex justify-end lg:mx-4 xl:m-0 xl:mt-4 ">
           <Image
             src="/hero.webp"
             width={1235}
             height={592}
             alt="Image of 'Casa Magic' rental property, its outside area and swimming pool in tenerife"
-            className="min-h-[375px] object-cover rounded-l-[26px] lg:rounded-r-[32px] "
+            className="min-h-[375px] rounded-l-[26px] object-cover lg:rounded-r-[32px] "
           ></Image>
         </div>
         <div>
-          <p className="text-center mx-4 text-gray-500 md:text-[1.5rem]">Golf del Sur, Tenerife</p>
+          <p className="mx-4 text-center text-gray-500 md:text-[1.5rem]">
+            Golf del Sur, Tenerife
+          </p>
         </div>
       </section>
-      <section id="about" className="flex flex-col  mt-[3.375rem]  gap-8 scroll-m-14">
-        <h2 className="font-semibold text-xl mx-4 lg:text-2xl">About The Accommodation </h2>
-        <div className="flex flex-col gap-8 lg:flex-row  justify-between">
-          <p className="text-lg max-w-[40ch] mx-4 lg:text-xl lg:leading-8">
+      <section
+        id="about"
+        className="mt-[3.375rem] flex  scroll-m-14  flex-col gap-8"
+      >
+        <h2 className="mx-4 text-xl font-semibold lg:text-2xl">
+          About The Accommodation{" "}
+        </h2>
+        <div className="flex flex-col justify-between gap-8  lg:flex-row">
+          <p className="mx-4 max-w-[40ch] text-lg lg:text-xl lg:leading-8">
             Welcome to Golf del Sur and Casa Magic! This vacational property
             stands separate from a main villa and features a private entrance,
             terrace, spacious king bedroom, and a private pool.
           </p>
-          <div className="flex justify-end ml-4">
+          <div className="ml-4 flex justify-end">
             <Image
               src="/hero.webp"
               width={1235}
               height={592}
               alt="Image of 'Casa Magic' rental property, its outside area and swimming pool in tenerife"
-              className="min-h-[275px] min-w-[225px] max-w-[550px] object-cover rounded-l-[26px] md:rounded-r-[26px] "
+              className="min-h-[275px] min-w-[225px] max-w-[550px] rounded-l-[26px] object-cover md:rounded-r-[26px] "
             ></Image>
           </div>
         </div>
-        <div className="flex mt-[2rem] p-4 gap-6 flex-col lg:flex-row  justify-evenly bg-blue-100 text-blue-950 rounded-2xl shadow h-[100vh] lg:h-auto lg:p-6">
-          <div className="flex flex-col gap-2 basis-[33%]">
+        <div className="mt-[2rem] flex h-[100vh] flex-col justify-evenly gap-6  rounded-2xl bg-blue-100 p-4 text-blue-950 shadow lg:h-auto lg:flex-row lg:p-6">
+          <div className="flex basis-[33%] flex-col gap-2">
             <h3 className="text-2xl font-medium">Prime Location</h3>
             <p className="">
               Casa Magic&apos;s location in Golf del Sur puts you close to
@@ -57,8 +70,8 @@ export default function Home() {
               and a supermarket, is just a stone&apos;s throw away.
             </p>
           </div>
-            <span className="border-blue-200 h-[2px] border lg:w-[2px] lg:h-auto"></span>
-          <div className="flex flex-col gap-2 basis-[33%]">
+          <span className="h-[2px] border border-blue-200 lg:h-auto lg:w-[2px]"></span>
+          <div className="flex basis-[33%] flex-col gap-2">
             <h3 className="text-2xl font-medium">Exclusive Amenities</h3>
             <p>
               A stunning pool and terrace area dedicated exclusively for your
@@ -66,97 +79,174 @@ export default function Home() {
               dining under the beautiful Tenerife sky.
             </p>
           </div>
-          <span className="border-blue-200 h-[2px] border lg:w-[2px] lg:h-auto"></span>
-          <div className="flex flex-col gap-2 basis-[33%]">
+          <span className="h-[2px] border border-blue-200 lg:h-auto lg:w-[2px]"></span>
+          <div className="flex basis-[33%] flex-col gap-2">
             <h3 className="text-2xl font-medium">Unmatched Comfort</h3>
-            <p>Our accommodation boasts a beautifully furnished 1-bedroom setup, complemented by 2 well-appointed bathrooms. The private lounge is a cozy space for relaxation, while the kitchen area allows you to enjoy your home cooked favourites.</p>
+            <p>
+              Our accommodation boasts a beautifully furnished 1-bedroom setup,
+              complemented by 2 well-appointed bathrooms. The private lounge is
+              a cozy space for relaxation, while the kitchen area allows you to
+              enjoy your home cooked favourites.
+            </p>
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-4 mt-[3.375rem] lg:mt-[5rem]  lg:my-[2.625rem] lg:gap-12 mx-4">
+      <section className="mx-4 mt-[3.375rem] flex flex-col gap-4  lg:my-[2.625rem] lg:mt-[5rem] lg:gap-12">
         <div className="flex justify-between">
           <h2 className="text-2xl font-bold">Our Gallery</h2>
           <span>
             <Link
               href="/gallery"
-              className="text-[#006eff] transition-all text-lg lg:text-xl hover:text-[1.45rem] hover:underline"
+              className="text-lg text-[#006eff] transition-all hover:text-[1.45rem] hover:underline lg:text-xl"
             >
-              View all <FontAwesomeIcon icon={faChevronRight}/>
+              View all <FontAwesomeIcon icon={faChevronRight} />
             </Link>
           </span>
         </div>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col justify-evenly gap-4 lg:flex-row">
-            <div className="h-[175px] w-full  rounded bg-gray-300 lg:h-[356px] lg:rounded-2xl">
-              1
+            <div className="relative h-[175px] w-full  overflow-hidden rounded bg-gray-300 lg:h-[356px] lg:rounded-2xl">
+              <Image
+                src="/gallery/IMG_3.webp"
+                alt="Image of casa magic"
+                fill="true"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+              />
             </div>
-            <div className="h-[175px] w-full rounded bg-gray-300 lg:h-[356px] lg:basis-[90%] lg:rounded-2xl">
-              2
+            <div className="relative h-[175px] w-full  w-full overflow-hidden rounded bg-gray-300 lg:h-[356px] lg:basis-[90%] lg:rounded-2xl">
+              <Image
+                src="/gallery/IMG_14.webp"
+                alt="Image of casa magic"
+                fill="true"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+              />
             </div>
           </div>
           <div className="flex flex-col justify-evenly gap-4 lg:flex-row">
-            <div className="h-[175px] w-full  rounded bg-gray-300 lg:h-[356px] lg:basis-[90%] lg:rounded-2xl">
-              3
+            <div className="relative h-[175px] w-full  overflow-hidden rounded bg-gray-300 lg:h-[356px] lg:basis-[90%] lg:rounded-2xl">
+              <Image
+                src="/gallery/IMG_11.webp"
+                alt="Image of casa magic"
+                fill="true"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+              />
             </div>
-            <div className="h-[175px] w-full  rounded bg-gray-300 lg:h-[356px] lg:rounded-2xl">
-              4
+            <div className="relative h-[175px] w-full  overflow-hidden rounded bg-gray-300 lg:h-[356px] lg:rounded-2xl">
+              <Image
+                src="/gallery/IMG_17.webp"
+                alt="Image of casa magic"
+                fill="true"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-4 mt-[3.375rem] lg:my-[2.625rem] lg:gap-12 mx-4">    
-  <h2 className="text-2xl font-bold">Property Overview</h2>          
-  <div className="bg-white rounded-2xl p-4 flex flex-col gap-4 transition-all">
-    <div className="flex flex-col gap-2 border-b-2 pb-2 lg:items-center">
-      <h4 className="text-lg font-medium lg:text-xl lg:w-full">Amenities</h4>
-      <ul className="max-w-[30ch] flex flex-col gap-2 text-sm lg:grid lg:grid-cols-4 lg:gap-4 lg:gap-x-6 lg:max-w-fit lg:text-lg">
-        <li className="lg:max-w-[15ch]">King-sized bed & en suite bathroom</li>
-        <li className="lg:max-w-[15ch]">Lounge with English TV</li>
-        <li>Air conditioning</li>
-        <li>Street parking</li>
-        <li>Private Access</li>
-        <li>Pool clean</li>
-        <li>Washing machine</li>
-        <li>Fridge / Freezer</li>
-        <li>Coffee machine</li>
-        <li>Air fryer</li>
-        <li>Hob & Microwave</li>
-        <li>Wi-Fi</li>
-      </ul>
-    </div>
-    <div className="transition-all duration-500 ease-in-out overflow-hidden">
-      <div className="flex justify-between items-center" onClick={() => setIsOpen(!isOpen)}>
-        <h4 className="text-lg font-medium cursor-pointer lg:w-full inline-block">Rules</h4>
-        <span className="transition-transform">
-          <FontAwesomeIcon icon={isOpen ? faChevronCircleUp : faChevronCircleDown} className="text-blue-400" />
-        </span>
-      </div>
-      <div className={`${isOpen ? 'flex' : 'hidden'} transition-all lg:justify-center`}>
-        <ul className="max-w-[30ch] flex flex-col gap-2 text-sm lg:grid lg:grid-cols-4 lg:gap-4 lg:gap-x-6 lg:max-w-fit lg:text-[1rem]">
-          <li>No pets</li>
-          <li>No parties</li>
-          <li>No smoking indoors</li>
-          <li>No Functions</li>
-          <li>No children</li>
-          <li  className="lg:max-w-[15ch]">Noise restriction applicable to residential area</li>
-          <li  className="lg:max-w-[15ch]">Strictly only the two guests on booking stay overnight</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-      {/* Contact Section */}
-      <section id="contact" className="flex flex-col gap-4 mt-[3.375rem] lg:my-[2.625rem] lg:gap-12 mx-4">  
-      <h2 className="text-2xl font-bold">Get in touch</h2>          
-      <h4 className="">Get In Touch for availability and cost, or any inquiries</h4>
-      <div className="flex flex-col gap-2 items-center mt-[1rem]">
-            <ul className="max-w-[30ch] flex flex-col gap-6 text-[0.875rem]">
-              <li className=" bg-white px-2 py-1 rounded-md font-medium text-lg  "><FontAwesomeIcon icon={faMobilePhone} size="2xl"/><a href="tel:+34618100493" className="ml-2">Click to Call</a></li>
-              <li className="bg-[#25d366] px-2 py-1 rounded-md font-medium text-lg text-white"> <FontAwesomeIcon icon={faWhatsapp} size="2xl"/> <a className="ml-2" aria-label="Chat on WhatsApp" alt="Chat on WhatsApp" href="https://wa.me/34618100493?text=Hello,%20I%20was%20checking%20out%20Casa%20Magic%20online%20and%20would%20like%20to%20chat">Chat on WhatsApp</a></li>
+      <section className="mx-4 mt-[3.375rem] flex flex-col gap-4 lg:my-[2.625rem] lg:gap-12">
+        <h2 className="text-2xl font-bold">Property Overview</h2>
+        <div className="flex flex-col gap-4 rounded-2xl bg-white p-4 transition-all">
+          <div className="flex flex-col gap-2 border-b-2 pb-2 lg:items-center">
+            <h4 className="text-lg font-medium lg:w-full lg:text-xl">
+              Amenities
+            </h4>
+            <ul className="flex max-w-[30ch] flex-col gap-2 text-sm lg:grid lg:max-w-fit lg:grid-cols-4 lg:gap-4 lg:gap-x-6 lg:text-lg">
+              <li className="lg:max-w-[15ch]">
+                King-sized bed & en suite bathroom
+              </li>
+              <li className="lg:max-w-[15ch]">Lounge with English TV</li>
+              <li>Air conditioning</li>
+              <li>Street parking</li>
+              <li>Private Access</li>
+              <li>Pool clean</li>
+              <li>Washing machine</li>
+              <li>Fridge / Freezer</li>
+              <li>Coffee machine</li>
+              <li>Air fryer</li>
+              <li>Hob & Microwave</li>
+              <li>Wi-Fi</li>
             </ul>
           </div>
-</section>
+          <div className="overflow-hidden transition-all duration-500 ease-in-out">
+            <div
+              className="flex items-center justify-between"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <h4 className="inline-block cursor-pointer text-lg font-medium lg:w-full">
+                Rules
+              </h4>
+              <span className="transition-transform">
+                <FontAwesomeIcon
+                  icon={isOpen ? faChevronCircleUp : faChevronCircleDown}
+                  className="text-blue-400"
+                />
+              </span>
+            </div>
+            <div
+              className={`${isOpen ? "flex" : "hidden"} transition-all lg:justify-center`}
+            >
+              <ul className="flex max-w-[30ch] flex-col gap-2 text-sm lg:grid lg:max-w-fit lg:grid-cols-4 lg:gap-4 lg:gap-x-6 lg:text-[1rem]">
+                <li>No pets</li>
+                <li>No parties</li>
+                <li>No smoking indoors</li>
+                <li>No Functions</li>
+                <li>No children</li>
+                <li className="lg:max-w-[15ch]">
+                  Noise restriction applicable to residential area
+                </li>
+                <li className="lg:max-w-[15ch]">
+                  Strictly only the two guests on booking stay overnight
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section
+        id="contact"
+        className="mx-4 mt-[3.375rem] flex min-h-[70vh] flex-col gap-4 lg:my-[2.625rem] lg:gap-12"
+      >
+        <h2 className="text-2xl font-bold">Get in touch</h2>
+        <h4 className="">
+          Get In Touch for availability and cost, or any inquiries
+        </h4>
+        <div className="flex h-full flex-1 flex-col items-center justify-center gap-2">
+          <div className="flex max-w-[30ch] flex-col gap-6 text-[0.875rem] lg:max-w-fit lg:flex-row">
+            <div className="flex items-center justify-center  text-lg font-medium">
+              <Link
+                href="tel:+34618100493"
+                className="flex h-[7rem] w-full items-center gap-2 rounded-md border border-blue-300 bg-blue-100 px-4 py-1 text-blue-950 transition-all active:scale-95 lg:w-auto"
+              >
+                <FontAwesomeIcon icon={faMobilePhone} size="2xl" />
+                <span>Click to Call</span>
+              </Link>
+            </div>
+            <div className="flex items-center justify-center text-lg font-medium text-white">
+              <Link
+                href="https://wa.me/34618100493?text=Hello,%20I%20was%20checking%20out%20Casa%20Magic%20online%20and%20would%20like%20to%20chat"
+                className="flex h-[7rem] w-full items-center gap-2 rounded-md bg-[#25d366] px-4 py-1 transition-all active:scale-95 lg:w-auto"
+              >
+                <FontAwesomeIcon icon={faWhatsapp} size="2xl" />
+                <span>Chat on WhatsApp</span>
+              </Link>
+            </div>
+            <div className="flex items-center justify-center  rounded-md  text-lg font-medium text-white ">
+              <Link
+                href="mailto:your@email.com"
+                className="flex h-[7rem] w-full items-center gap-2 rounded-md bg-red-500 px-4 py-1 transition-all active:scale-95 lg:w-auto"
+              >
+                <FontAwesomeIcon icon={faEnvelope} size="2xl" />
+                <span>Send us an e-mail</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

@@ -1,38 +1,72 @@
-import Link from "next/link"
-
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
+("use client");
 
 export default function Page() {
-    return  <main className="flex min-h-screen flex-col mb-[6.25rem] ">      
-     <section className="flex flex-col gap-4 mt-[3.375rem] lg:my-[2.625rem] lg:gap-12 mx-4">
+  const [lightboxIsOpen, setLightboxIsOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
+
+  const openLightbox = (index) => {
+    setPhotoIndex(index);
+    setLightboxIsOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxIsOpen(false);
+  };
+
+  return (
+    <main className="mb-[6.25rem] flex min-h-screen flex-col">
+      <section className="mx-4 mt-[4.375rem] flex flex-col gap-4">
         <div className="flex justify-between">
-          <h2 className="text-2xl font-bold">Our Gallery</h2>          
+          <h2 className="text-2xl font-bold">Our Gallery</h2>
         </div>
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col justify-evenly gap-4 lg:flex-row">
-            <div className="h-[175px] w-full  rounded bg-gray-300 lg:h-[356px] lg:rounded-2xl">
-              1
+        <div className="flex flex-col flex-wrap justify-evenly gap-4 lg:flex-row">
+          {imageNames.map((imageName, index) => (
+            <div
+              key={`${index}_container`}
+              className="relative h-[450px] w-full basis-[45vw] cursor-pointer overflow-hidden rounded bg-gray-300 lg:h-[356px] lg:rounded-2xl"
+              onClick={() => openLightbox(index)}
+            >
+              <Image
+                key={index}
+                src={`/gallery/${imageName}`}
+                alt={`Image ${index + 1}`}
+                fill="true"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+              />
             </div>
-            <div className="h-[175px] w-full rounded bg-gray-300 lg:h-[356px] lg:basis-[90%] lg:rounded-2xl">
-              2
-            </div>
-          </div>
-          <div className="flex flex-col justify-evenly gap-4 lg:flex-row">
-            <div className="h-[175px] w-full  rounded bg-gray-300 lg:h-[356px] lg:basis-[90%] lg:rounded-2xl">
-              3
-            </div>
-            <div className="h-[175px] w-full  rounded bg-gray-300 lg:h-[356px] lg:rounded-2xl">
-              4
-            </div>
-          </div>
+          ))}
         </div>
         <span>
-            <Link
-              href="/"
-              className="text-[#006eff] transition-all hover:text-[1.0625rem] hover:underline"
-            >
-              Back home
-            </Link>
-          </span>
+          <Link
+            href="/"
+            className="text-[#006eff] transition-all hover:text-[1.0625rem] hover:underline"
+          >
+            Back home
+          </Link>
+        </span>
       </section>
-     </main>
-  }
+      {lightboxIsOpen && (
+        <Lightbox
+          mainSrc={`/gallery/${imageNames[photoIndex]}`}
+          nextSrc={`/gallery/${imageNames[(photoIndex + 1) % imageNames.length]}`}
+          prevSrc={`/gallery/${imageNames[(photoIndex + imageNames.length - 1) % imageNames.length]}`}
+          onCloseRequest={closeLightbox}
+          onMovePrevRequest={() =>
+            setPhotoIndex(
+              (photoIndex + imageNames.length - 1) % imageNames.length,
+            )
+          }
+          onMoveNextRequest={() =>
+            setPhotoIndex((photoIndex + 1) % imageNames.length)
+          }
+        />
+      )}
+    </main>
+  );
+}
