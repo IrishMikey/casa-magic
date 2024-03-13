@@ -132,6 +132,7 @@ export default function Home() {
                 fill="true"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
+                priority={true}
               />
             </div>
             <div className="relative h-[175px] w-full  overflow-hidden rounded bg-gray-300 lg:h-[356px] lg:rounded-2xl">
