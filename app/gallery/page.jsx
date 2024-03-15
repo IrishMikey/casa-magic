@@ -1,6 +1,6 @@
 import Link from "next/link";
 import imagesData from "../content/imgData.json";
-import ImgContainer from "./imgcontainer";
+import ImgContainer from "./ImgContainer";
 
 export default function Page() {
   return (
