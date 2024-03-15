@@ -27,6 +27,7 @@ export default function Home() {
             src="/hero.webp"
             width={1235}
             height={592}
+            priority={true}
             alt="Image of 'Casa Magic' rental property, its outside area and swimming pool in tenerife"
             className="min-h-[375px] rounded-l-[26px] object-cover lg:rounded-r-[32px]"
           ></Image>
