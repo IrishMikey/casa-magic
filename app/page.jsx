@@ -61,7 +61,7 @@ export default function Home() {
             ></Image>
           </div>
         </div>
-        <div className="mt-[2rem] flex h-[100vh] flex-col justify-evenly gap-6  rounded-2xl bg-blue-100 p-4 text-blue-950 shadow lg:h-auto lg:flex-row lg:p-6">
+        <div className="mt-[2rem] flex min-h-[100vh] flex-col justify-evenly gap-6 rounded-2xl  bg-blue-100 p-4 text-blue-950 shadow lg:h-auto lg:min-h-0 lg:flex-row lg:p-6">
           <div className="flex basis-[33%] flex-col gap-2">
             <h3 className="text-2xl font-medium">Prime Location</h3>
             <p className="">
@@ -115,7 +115,7 @@ export default function Home() {
                 className="object-cover"
               />
             </div>
-            <div className="relative h-[175px] w-full  w-full overflow-hidden rounded bg-gray-300 lg:h-[356px] lg:basis-[90%] lg:rounded-2xl">
+            <div className="relative h-[175px] w-full overflow-hidden rounded bg-gray-300 lg:h-[356px] lg:basis-[90%] lg:rounded-2xl">
               <Image
                 src="/gallery/IMG_14.webp"
                 alt="Image of casa magic"
@@ -155,7 +155,7 @@ export default function Home() {
             <h4 className="text-lg font-medium lg:w-full lg:text-xl">
               Amenities
             </h4>
-            <ul className="flex max-w-[30ch] flex-col gap-2 text-sm lg:grid lg:max-w-fit lg:grid-cols-4 lg:gap-4 lg:gap-x-6 lg:text-lg">
+            <ul className="ml-4 flex max-w-[30ch] list-disc flex-col gap-2 text-sm lg:m-0 lg:grid lg:max-w-fit lg:grid-cols-4 lg:gap-4 lg:gap-x-6 lg:text-lg    ">
               <li className="lg:max-w-[15ch]">
                 King-sized bed & en suite bathroom
               </li>
@@ -190,7 +190,7 @@ export default function Home() {
             <div
               className={`${isOpen ? "flex" : "hidden"} transition-all lg:justify-center`}
             >
-              <ul className="flex max-w-[30ch] flex-col gap-2 text-sm lg:grid lg:max-w-fit lg:grid-cols-4 lg:gap-4 lg:gap-x-6 lg:text-[1rem]">
+              <ul className="ml-4 flex max-w-[30ch] list-disc flex-col gap-2 text-sm lg:m-0 lg:grid lg:max-w-fit lg:grid-cols-4 lg:gap-4 lg:gap-x-6 lg:text-[1rem]">
                 <li>No pets</li>
                 <li>No parties</li>
                 <li>No smoking indoors</li>

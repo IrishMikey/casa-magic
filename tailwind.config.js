@@ -11,7 +11,7 @@ module.exports = {
         "custom-HeroPos": "100% 34%",
       },
       gridTemplateColumns: {
-        gallery: "repeat(auto-fit, minmax(300px, 1fr))",
+        gallery: "repeat(auto-fit, minmax(350px, 1fr))",
       },
     },
   },
