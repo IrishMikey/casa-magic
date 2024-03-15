@@ -28,7 +28,7 @@ export default function Home() {
             width={1235}
             height={592}
             alt="Image of 'Casa Magic' rental property, its outside area and swimming pool in tenerife"
-            className="min-h-[375px] rounded-l-[26px] object-cover lg:rounded-r-[32px] "
+            className="min-h-[375px] rounded-l-[26px] object-cover lg:rounded-r-[32px]"
           ></Image>
         </div>
         <div>
@@ -52,11 +52,12 @@ export default function Home() {
           </p>
           <div className="ml-4 flex justify-end">
             <Image
-              src="/hero.webp"
-              width={1235}
-              height={592}
+              src="/gallery/IMG_15.webp"
+              width={4000}
+              height={6000}
+              priority="true"
               alt="Image of 'Casa Magic' rental property, its outside area and swimming pool in tenerife"
-              className="min-h-[275px] min-w-[225px] max-w-[550px] rounded-l-[26px] object-cover md:rounded-r-[26px] "
+              className="max-h-[275px] min-w-[225px] max-w-[550px] rounded-l-[26px] object-cover md:rounded-r-[26px] "
             ></Image>
           </div>
         </div>

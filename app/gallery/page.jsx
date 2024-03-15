@@ -9,7 +9,7 @@ export default function Page() {
         <div className="flex justify-between">
           <h2 className="text-2xl font-bold">Our Gallery</h2>
         </div>
-        <div className="grid-cols-gallery my-3 grid auto-rows-[10px] px-2 md:max-w-[900px] lg:max-w-[1200px]">
+        <div className="my-3 grid auto-rows-[10px] grid-cols-gallery md:max-w-[900px] lg:max-w-[1200px]">
           {imagesData.images.map((image) => (
             <ImgContainer key={image.path} photo={image}></ImgContainer>
           ))}
