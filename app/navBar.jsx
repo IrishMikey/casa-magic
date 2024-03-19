@@ -28,10 +28,10 @@ export default function NavBar() {
   });
 
   return (
-    <nav className="fixed z-20 flex w-screen flex-col bg-primary p-1 px-4 bg-[#f8e9da]  md:flex-row md:items-center md:justify-between rounded-lg max-w-[1200px]">
+    <nav className="bg-primary fixed z-20 flex w-screen max-w-[1200px] flex-col rounded-b-lg bg-[rgba(23,37,84,0.96)] p-1  px-4 text-white md:flex-row md:items-center md:justify-between">
       <div className="flex flex-row items-center justify-between">
         <Link
-          href="#"
+          href="/"
           style={{
             fontSize: `${titleFontSize}px`,
           }}
@@ -54,7 +54,7 @@ export default function NavBar() {
       {/* Moblie nav */}
       <div
         className={
-          "fixed top-0 mx-auto flex h-full w-full bg-[#f8e9da] pt-4 transition-all duration-500 ease-in md:hidden " +
+          "fixed top-0 mx-auto flex h-full w-full bg-[#BBA896] pt-4 transition-all duration-500 ease-in md:hidden " +
           (isOpen ? "left-0" : "left-[-770px]")
         }
       >
@@ -64,7 +64,7 @@ export default function NavBar() {
             <li className="duration-400  flex w-full  text-[1.75rem] font-bold uppercase transition-all ease-in-out ">
               <Link
                 onClick={() => setIsOpen(!isOpen)}
-                href="#"
+                href="/"
                 className=" block w-full px-8 py-4"
               >
                 Home
@@ -104,7 +104,7 @@ export default function NavBar() {
       <div className="h-full ">
         <ul className="hidden h-full gap-2 md:flex md:flex-row md:justify-between lg:gap-8  ">
           <li className="duration-600  flex h-full w-full items-center p-2 text-[18px] font-medium uppercase transition-all ease-in ">
-            <Link href="#" onClick={() => setTitleFontSize(36)}>
+            <Link href="/" onClick={() => setTitleFontSize(36)}>
               Home
             </Link>
           </li>
@@ -119,7 +119,7 @@ export default function NavBar() {
             </Link>
           </li>
           <li className="duration-400  flex h-full w-full items-center p-2 text-[18px] font-medium uppercase transition-all ease-in-out ">
-            <Link href="#contact" className=" ">
+            <Link href="/#contact" className=" ">
               Contact
             </Link>
           </li>

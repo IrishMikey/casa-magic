@@ -10,6 +10,9 @@ module.exports = {
       objectPosition: {
         "custom-HeroPos": "100% 34%",
       },
+      gridTemplateColumns: {
+        gallery: "repeat(auto-fit, minmax(350px, 1fr))",
+      },
     },
   },
   plugins: [],
