@@ -1,9 +1,14 @@
+"use client";
 import Image from "next/image";
+import ImgView from "../imgView";
+import { useState } from "react";
 
 export default function ImgContainer({ photo }) {
   const widthHeightRatio = photo.height / photo.width;
   const galleryHeight = Math.ceil(350 * widthHeightRatio);
   const photoSpans = Math.ceil(galleryHeight / 10) + 1;
+
+  let [imgGallery, setImgGallery] = useState(false);
 
   return (
     <div
@@ -11,7 +16,10 @@ export default function ImgContainer({ photo }) {
       style={{ gridRow: `span ${photoSpans}` }}
     >
       <div className="grid place-content-center">
-        <div className="group overflow-hidden rounded-xl">
+        <div
+          className="group overflow-hidden rounded-xl"
+          onClick={() => setImgGallery(true)}
+        >
           <Image
             key={photo.path}
             src={photo.path}
@@ -20,6 +28,7 @@ export default function ImgContainer({ photo }) {
             width={photo.width}
             sizes="350px"
           />
+          {imgGallery ? <ImgView photo={photo} /> : <></>}
         </div>
       </div>
     </div>

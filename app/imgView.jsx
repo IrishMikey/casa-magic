@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function ImgView() {
+export default function ImgView({ photo }) {
   let [isOpen, setIsOpen] = useState(true);
 
   return (
@@ -12,15 +12,17 @@ export default function ImgView() {
         <div className="absolute left-0 top-0 z-10 flex min-h-[100vh] flex-col items-center justify-center bg-[#25201af0] ">
           <div
             className="h-[35px] w-[35px] cursor-pointer text-white hover:underline"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen(false)}
           >
             Close
           </div>
           <Image
-            src="/gallery/IMG_3.webp"
-            alt="Image of casa magic"
-            width={4000}
-            height={6000}
+            key={photo.path}
+            src={photo.path}
+            alt={`Image ${photo}`}
+            height={photo.height}
+            width={photo.width}
+            sizes="350px"
           />
         </div>
       ) : (
