@@ -17,7 +17,7 @@ export default function ImgContainer({ photo }) {
     >
       <div className="grid place-content-center">
         <div
-          className="group overflow-hidden rounded-xl"
+          className="group overflow-hidden rounded-xl  "
           onClick={() => setImgGallery(true)}
         >
           <Image

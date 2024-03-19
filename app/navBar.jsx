@@ -18,7 +18,6 @@ export default function NavBar() {
     } else {
       setTitleFontSize(24);
     }
-    // console.log(clientHeight)
   };
 
   useEffect(() => {
