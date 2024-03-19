@@ -240,7 +240,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center  rounded-md  text-lg font-medium text-white ">
               <Link
-                href="mailto:your@email.com"
+                href="mailto:cakemagichamster@yahoo.co.uk"
                 className="flex h-[7rem] w-full items-center gap-2 rounded-md bg-red-500 px-4 py-1 transition-all active:scale-95 lg:w-auto"
               >
                 <FontAwesomeIcon icon={faEnvelope} size="2xl" />
