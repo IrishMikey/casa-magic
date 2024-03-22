@@ -99,7 +99,7 @@ export default function Home() {
           <span>
             <Link
               href="/gallery"
-              className="text-lg text-[#006eff] transition-all hover:text-[1.45rem] hover:underline lg:text-xl"
+              className="text-lg text-[#006eff] transition-all hover:text-[1.25rem] hover:underline lg:text-xl"
             >
               View all <FontAwesomeIcon icon={faChevronRight} />
             </Link>

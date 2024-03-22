@@ -8,7 +8,7 @@ export default function ImgContainer({ photo }) {
   const galleryHeight = Math.ceil(350 * widthHeightRatio);
   const photoSpans = Math.ceil(galleryHeight / 10) + 1;
 
-  let [imgViewer, setImgViewer] = useState(false);
+  let [showImg, setShowImg] = useState(false);
 
   return (
     <div
@@ -17,8 +17,8 @@ export default function ImgContainer({ photo }) {
     >
       <div className="grid place-content-center">
         <div
-          className="group overflow-hidden rounded-xl  "
-          onClick={() => setImgViewer(true)}
+          className="group cursor-pointer select-none overflow-hidden rounded-xl transition hover:scale-105 active:scale-100"
+          onClick={() => setShowImg(!showImg)}
         >
           <Image
             key={photo.path}
@@ -28,11 +28,11 @@ export default function ImgContainer({ photo }) {
             width={photo.width}
             sizes="350px"
           />
-          {imgViewer && (
+          {showImg && (
             <ImgView
               photo={photo}
-              imgViewer={imgViewer}
-              setImgViewer={setImgViewer}
+              showImg={showImg}
+              handleClose={() => setShowImg(!showImg)}
             />
           )}
         </div>
