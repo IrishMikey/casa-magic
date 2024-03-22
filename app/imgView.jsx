@@ -5,25 +5,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-export default function ImgView({ photo }) {
-  let [isOpen, setIsOpen] = useState(true);
+export default function ImgView({ photo, imgViewer, setImgViewer }) {
+  // let [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else document.body.style.overflow = 'scroll';
+    if (imgViewer) {
+      document.body.style.overflow = "hidden";
+      console.log("imgViwe state : " + imgViewer);
+    } else {
+      document.body.style.overflow = "scroll";
+      console.log("imgView state : " + imgViewer);
+    }
     return () => {};
-  }, [isOpen]);
+  }, [imgViewer]);
 
   return (
     <>
-      {isOpen ? (
-        <div className="fixed left-0 top-0 z-20 flex min-h-[100%] min-w-[100%] overflow-hidden flex-col items-center justify-center bg-[#25201af0] ">
+      {imgViewer && (
+        <div className="fixed left-0 top-0 z-20 flex min-h-[100%] min-w-[100%] flex-col items-center justify-center overflow-hidden bg-[#25201af0]">
           <div
-            className="w-[100%] px-6 pb-2 text-end max-w-[500px] cursor-pointer text-white hover:underline "
-            onClick={() => setIsOpen(false)}
+            className="w-[100%] max-w-[500px] cursor-pointer px-6 pb-2 text-end text-white hover:underline"
+            onClick={() => setImgViewer(false)}
           >
-            <FontAwesomeIcon icon={faX} size="xl" className="active:scale-90 transition-all hover:scale-105"/>
+            <FontAwesomeIcon
+              icon={faX}
+              size="lg"
+              className="transition-all hover:scale-105 active:scale-90"
+            />
           </div>
           <Image
             key={photo.path}
@@ -32,11 +40,9 @@ export default function ImgView({ photo }) {
             height={photo.height}
             width={photo.width}
             sizes="350px"
-            className="lg:max-w-[500px] max-w-[350px] rounded-lg "
+            className="max-w-[350px] rounded-lg lg:max-w-[500px]"
           />
         </div>
-      ) : (
-        <></>
       )}
     </>
   );

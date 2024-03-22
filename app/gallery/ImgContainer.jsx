@@ -8,7 +8,7 @@ export default function ImgContainer({ photo }) {
   const galleryHeight = Math.ceil(350 * widthHeightRatio);
   const photoSpans = Math.ceil(galleryHeight / 10) + 1;
 
-  let [imgGallery, setImgGallery] = useState(false);
+  let [imgViewer, setImgViewer] = useState(false);
 
   return (
     <div
@@ -18,7 +18,7 @@ export default function ImgContainer({ photo }) {
       <div className="grid place-content-center">
         <div
           className="group overflow-hidden rounded-xl  "
-          onClick={() => setImgGallery(true)}
+          onClick={() => setImgViewer(true)}
         >
           <Image
             key={photo.path}
@@ -28,7 +28,13 @@ export default function ImgContainer({ photo }) {
             width={photo.width}
             sizes="350px"
           />
-          {imgGallery ? <ImgView photo={photo} /> : <></>}
+          {imgViewer && (
+            <ImgView
+              photo={photo}
+              imgViewer={imgViewer}
+              setImgViewer={setImgViewer}
+            />
+          )}
         </div>
       </div>
     </div>
