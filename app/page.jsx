@@ -99,7 +99,7 @@ export default function Home() {
           <span>
             <Link
               href="/gallery"
-              className="text-lg text-[#006eff] transition-all hover:text-[1.45rem] hover:underline lg:text-xl"
+              className="text-lg text-[#006eff] transition-all hover:text-[1.25rem] hover:underline lg:text-xl"
             >
               View all <FontAwesomeIcon icon={faChevronRight} />
             </Link>
@@ -215,8 +215,9 @@ export default function Home() {
         className="mx-4 mt-[3.375rem] flex min-h-[70vh] flex-col gap-4 lg:my-[2.625rem] lg:gap-12"
       >
         <h2 className="text-2xl font-bold">Get in touch</h2>
-        <h4 className="">
-          Get In Touch for availability and cost, or any inquiries
+        <h4 className="text-xl">
+          Get In Touch for availability and cost,
+          <br /> or any inquiries.
         </h4>
         <div className="flex h-full flex-1 flex-col items-center justify-center gap-2">
           <div className="flex max-w-[30ch] flex-col gap-6 text-[0.875rem] lg:max-w-fit lg:flex-row">

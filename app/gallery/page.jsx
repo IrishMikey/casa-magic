@@ -6,7 +6,7 @@ import ImgView from "../imgView";
 export default function Page() {
   return (
     <main className="mb-[6.25rem] flex min-h-screen flex-col ">
-      <section className="mx-4 mt-[4.375rem] flex flex-col gap-4 ">
+      <section className="mx-2 mt-[4.375rem] flex flex-col gap-4 ">
         <div className="flex justify-between">
           <h2 className="text-2xl font-bold">Our Gallery</h2>
         </div>
@@ -18,7 +18,7 @@ export default function Page() {
         <span>
           <Link
             href="/"
-            className="text-[#006eff] transition-all hover:text-[1.0625rem] hover:underline"
+            className="text-[#006eff] transition-all hover:underline"
           >
             Back home
           </Link>

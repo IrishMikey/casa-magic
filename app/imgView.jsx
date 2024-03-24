@@ -4,26 +4,29 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import ReactPortal from "./components/ReactPortal";
 
-export default function ImgView({ photo }) {
-  let [isOpen, setIsOpen] = useState(true);
+export default function ImgView({ photo, showImg, handleClose }) {
+  // let [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else document.body.style.overflow = 'scroll';
-    return () => {};
-  }, [isOpen]);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [showImg]);
 
   return (
-    <>
-      {isOpen ? (
-        <div className="fixed left-0 top-0 z-20 flex min-h-[100%] min-w-[100%] overflow-hidden flex-col items-center justify-center bg-[#25201af0] ">
-          <div
-            className="w-[100%] px-6 pb-2 text-end max-w-[500px] cursor-pointer text-white hover:underline "
-            onClick={() => setIsOpen(false)}
-          >
-            <FontAwesomeIcon icon={faX} size="xl" className="active:scale-90 transition-all hover:scale-105"/>
+    <ReactPortal wrapperId="react-portal-modal">
+      <>
+        <div className="fixed left-0 top-0 z-40 flex h-[100vh] w-[100vw] flex-col items-center justify-center overflow-hidden bg-[#25201af0]">
+          <div className="w-[100%] max-w-[500px] cursor-pointer px-6 pb-2 text-end text-white hover:underline">
+            <FontAwesomeIcon
+              icon={faX}
+              size="lg"
+              className="transition-all hover:scale-105 active:scale-90"
+              onClick={() => handleClose}
+            />
           </div>
           <Image
             key={photo.path}
@@ -32,12 +35,10 @@ export default function ImgView({ photo }) {
             height={photo.height}
             width={photo.width}
             sizes="350px"
-            className="lg:max-w-[500px] max-w-[350px] rounded-lg "
+            className="max-w-[350px] rounded-lg lg:max-w-[500px]"
           />
         </div>
-      ) : (
-        <></>
-      )}
-    </>
+      </>
+    </ReactPortal>
   );
 }
